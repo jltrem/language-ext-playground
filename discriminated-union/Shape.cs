@@ -5,6 +5,20 @@ using static LanguageExt.Prelude;
 
 namespace language_ext_playground.discriminated_union
 {
+
+   /* DISCRIMINATED UNION 
+    * 
+    * Support of DUs is done via code generation with Roslyn.
+    * The following should be added directly to your csproj:
+
+         <ItemGroup>
+            <PackageReference Include="LanguageExt.CodeGen" Version="3.3.40" PrivateAssets="all" />
+            <PackageReference Include="CodeGeneration.Roslyn.BuildTime" Version="0.6.1" PrivateAssets="all" />
+            <DotNetCliToolReference Include="dotnet-codegen" Version="0.6.1" />
+         </ItemGroup>
+
+   */
+
    [Union]
    public interface Shape
    {
