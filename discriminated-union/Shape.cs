@@ -29,13 +29,13 @@ namespace language_ext_playground.discriminated_union
 
    public static class ShapeExample
    {
-      public static Lst<string> Run()
+      public static Seq<string> Run()
       {
          var s1 = ShapeCon.Rectangle(100, 20);
          var s2 = ShapeCon.Circle(50);
          var s3 = ShapeCon.Prism(25, 300);
 
-         return List(s1, s2, s3)
+         return Seq(s1, s2, s3)
             .Map(GetDescription);
       }
 
