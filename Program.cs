@@ -9,6 +9,9 @@ namespace language_ext_playground
    {
       static void Main(string[] args)
       {
+         option.OrOperator.FirstSome()
+            .Do(x => Log($"OrOperator.FirstSome() returned {x}"));
+
          discriminated_union.ShapeExample.Run()
             .Iter(Log);
       }
