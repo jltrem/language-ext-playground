@@ -22,9 +22,25 @@ namespace language_ext_playground
                     Left: err => Some(err))
                 .Do(Log);
 
-            LogHeader("either.OneThingOrAnother.Check42(5)");
+            LogHeader("either.OneThingOrAnother.TryCheck42(5)");
             either.OneThingOrAnother
                 .TryCheck42(5)
+                .Match(
+                    Right: x => Some($"{x}"),
+                    Left: err => Some(err))
+                .Do(Log);
+
+            LogHeader("either.OneThingOrAnother.PreludeCheck42(42)");
+            either.OneThingOrAnother
+                .PreludeCheck42(42)
+                .Match(
+                    Right: x => Some($"{x}"),
+                    Left: err => Some(err))
+                .Do(Log);
+
+            LogHeader("either.OneThingOrAnother.PreludeCheck42(5)");
+            either.OneThingOrAnother
+                .PreludeCheck42(5)
                 .Match(
                     Right: x => Some($"{x}"),
                     Left: err => Some(err))
